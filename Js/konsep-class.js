@@ -2,7 +2,9 @@
 
 class user {
     constructor(nama, umur, alamat, hobi) {
-        (this.nama = nama), (this.umur = umur), (this.alamat = alamat);
+        this.nama = nama,
+        this.umur = umur, 
+        this.alamat = alamat;
         this.hobi = hobi;
     }
     greet() {
