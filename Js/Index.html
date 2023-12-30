@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>javascript objek dan class</title>
+</head>
+<body>
+  <!---eruda browser inspektor-->
+  <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+  <script>
+    eruda.init();
+  </script>
+
+  <script>
+    try {
+      class Orang {
+        static info = "static info: class untuk menlihat umur pemilih"
+
+        constructor(nama, umur) {
+          this.nama = nama,
+          this.umur = umur
+        }
+
+        get() {
+          if (this.umur >= 18) {
+            return "orang ini dapat memilih"
+          } else {
+            return "orang ini tidak bisa memilih"
+          }
+        }
+
+      };
+      
+      
+      
+      class OrangDewasa extends Orang {
+        constructor(nama, umur, alamat) {
+          super(nama, umur)
+          this.alamat = alamat || "unknown"
+        }
+      };
+
+      let anggota = new Orang("amri", 18)
+      let pemilih = new OrangDewasa("budi", 20, "jalan.pramuka")
+
+      let test = pemilih instanceof OrangDewasa;
+
+      console.log(anggota)
+      console.log(pemilih)
+      console.log(anggota.get())
+      console.info(Orang.info)
+
+      function hallo(){
+       console.log(`hallo nama saya adalah ${this.nama} dan umur saya adalah ${this.umur} dan beralamat di ${this.alamat}`)
+      }
+       
+      // hallo.call(pemilih)
+      console.table(anggota)
+
+function rekursif(n){
+  if(n == 1 || n == 0){
+    return 1
+  };
+  return n * rekursif(n-1);
+};
+
+z = rekursif(8);
+console.log(z)
+
+
+    }catch(error) {
+      console.error(`Terjadi error :${error.message}`)
+    };
+    
+  </script>
+
+<!-- <script src="konsep-class.js"></script>
+<script src="konsep-scope.js"></script>-->
+</body>
+</html>
