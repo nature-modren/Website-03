@@ -1,0 +1,11 @@
+body {
+  background-color: whitesmoke;
+}
+
+.paragraf2 {
+  color: rgb(22, 66, 66);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
